@@ -18,6 +18,23 @@ body main .first{
   /* width: 100%; */
   color: var(--white);
 }
+/* ------------------------------------------------------------------- */
+.menu-toggle{
+  display: none;
+}
+.hamburger{
+  display: none;
+  flex-direction: column;
+}
+/* ----------------------------------------------------- --------------*/
+.bar{
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 4px 0px;
+  transition: 0.4s;
+  
+}
 .navLink{
   margin: auto;
   width: 80%;
@@ -29,6 +46,10 @@ body main .first{
 }
 .navLink > a{
   color: var(--white);
+  transition: 0.3s;
+}
+.navLink > a:hover{
+  color: var(--orange);
 }
 .first article{
   display: flex;
@@ -243,4 +264,31 @@ footer p{
   font-weight: 400px;
   text-align: center;
   margin-top: 90px;
+}
+/* ----------------------------Mobie View------------------------ */
+@media (max-width: 480px){
+  .hamburger{
+    display: flex;
+  }
+  .navLink{
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(70vh - 60px);
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s;
+  }
+  .navLink > img + a{
+    margin-right: auto;
+  }
+  .navLink a{
+    margin: 2px 0;
+  }
+  .menu-toggle:checked ~ .navLink{
+    left: 0;
+  }
 }
